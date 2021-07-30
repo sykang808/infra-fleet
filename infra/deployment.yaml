@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: fleet-infra
-  name: fleet-infra
+    app: fleet-infra-app
+  name: fleet-infra-deployment
   namespace: gitops-sample
 spec:
   selector:
     matchLabels:
-      app: fleet-infra
+      app: fleet-infra-app
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -17,12 +17,12 @@ spec:
   template:
     metadata:
       labels:
-        app: fleet-infra
+        app: fleet-infra-app
     spec:
       containers:
       - image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
         imagePullPolicy: Always
-        name: fleet-infra
+        name: fleet-infra-app
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           protocol: TCP
