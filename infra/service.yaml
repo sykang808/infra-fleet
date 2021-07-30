@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: member-service
+  name: fleet-infra
   namespace: gitops-sample
 spec:
   selector:
-    app: member-service
+    app: fleet-infra
   type: LoadBalancer  
   ports:
    -  protocol: TCP
