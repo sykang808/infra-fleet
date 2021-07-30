@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: fleet-infra-app
-  name: fleet-infra-deployment
+  name: fleet-infra-app
   namespace: gitops-sample
 spec:
   selector:
