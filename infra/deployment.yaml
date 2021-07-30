@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: member-service
-  name: member-service
-  namespace: member-service
+    app: fleet-infra
+  name: fleet-infra
+  namespace: gitops-sample
 spec:
   selector:
     matchLabels:
-      app: member-service
+      app: fleet-infra
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -17,12 +17,12 @@ spec:
   template:
     metadata:
       labels:
-        app: member-service
+        app: fleet-infra
     spec:
       containers:
-      - image: 300728852453.dkr.ecr.us-west-2.amazonaws.com/tenducks/member-service:latest
+      - image: 300728852453.dkr.ecr.us-west-2.amazonaws.com/tenducks/fleet-infra:latest
         imagePullPolicy: Always
-        name: member-service
+        name: fleet-infra
         ports:
         - containerPort: 80
           protocol: TCP
