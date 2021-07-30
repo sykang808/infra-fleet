@@ -20,7 +20,7 @@ spec:
         app: fleet-infra
     spec:
       containers:
-      - image: 300728852453.dkr.ecr.us-west-2.amazonaws.com/tenducks/fleet-infra:latest
+      - image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
         imagePullPolicy: Always
         name: fleet-infra
         ports:
