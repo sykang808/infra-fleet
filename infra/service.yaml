@@ -5,7 +5,7 @@ metadata:
   namespace: gitops-sample
 spec:
   selector:
-    app: fleet-infra-app
+    app: fleet-infra-deployment
   type: LoadBalancer  
   ports:
    -  protocol: TCP
