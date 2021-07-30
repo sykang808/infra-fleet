@@ -7,4 +7,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: 300728852453.dkr.ecr.us-west-2.amazonaws.com/tenducks/member-service
-  newTag: b2526478
+  newTag: latest
