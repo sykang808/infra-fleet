@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleet-infra
-  namespaces: gitops-sample
+  namespace: gitops-sample
 spec:
   selector:
     matchLabels:
