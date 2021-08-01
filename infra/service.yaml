@@ -7,6 +7,6 @@ metadata:
     run: fleet-infra
 spec:
   ports:
-  - port: 80
+  - port: 8080
   selector:
     run: fleet-infra

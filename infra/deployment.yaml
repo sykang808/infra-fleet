@@ -17,7 +17,7 @@ spec:
       - name: fleet-infra
         image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           limits:
             cpu: 500m
