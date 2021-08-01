@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fleet-infra-svc
-  namespace: gitops-sample
+  name: fleet-infra
+  namespaces: gitops-sample
+  labels:
+    run: fleet-infra
 spec:
-  selector:
-    app: fleet-infra-app
-  type: LoadBalancer  
   ports:
-   -  protocol: TCP
-      port: 8080
-      targetPort: 8080
+  - port: 80
+  selector:
+    run: fleet-infra

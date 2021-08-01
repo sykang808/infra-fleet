@@ -1,28 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: fleet-infra-app
-  name: fleet-infra-app
-  namespace: gitops-sample
+  name: fleet-infra
+  namespaces: gitops-sample
 spec:
   selector:
     matchLabels:
-      app: fleet-infra-app
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+      run: fleet-infra
+  replicas: 1
   template:
     metadata:
       labels:
-        app: fleet-infra-app
+        run: fleet-infra
     spec:
       containers:
-      - image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
-        imagePullPolicy: Always
-        name: fleet-infra-app
+      - name: fleet-infra
+        image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
         ports:
-        - containerPort: 8080
-          protocol: TCP
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+
