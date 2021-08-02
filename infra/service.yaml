@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: fleet-infra
   namespace: gitops-sample
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: "/"  
 spec:
   selector:
      app: fleet-infra
