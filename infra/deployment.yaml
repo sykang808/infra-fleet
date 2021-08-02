@@ -16,12 +16,6 @@ spec:
       containers:
       - name: fleet-infra
         image: 566034038752.dkr.ecr.ap-northeast-2.amazonaws.com/awsome-flux-example
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 5
         ports:
         - containerPort: 80
         resources:
